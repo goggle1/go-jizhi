@@ -1,0 +1,16 @@
+syntax = "proto3";
+package p_rpc;
+
+import "github.com/micro/go-api/proto/api.proto";
+import "git.tvblack.com/video/frame/proto/p_common/common.proto";
+
+service Message {
+    rpc OnRequestRpc (p_common.RequestHead) returns (p_common.ResponseHead);
+    rpc OnRequestJson (p_common.RequestHead) returns (p_common.RspJsonHead);
+    rpc OnRequest (go.api.Request) returns (go.api.Response);
+}
+
+service Api{
+    rpc OnRequest (go.api.Request) returns (go.api.Response);
+    rpc OnRequestRpc (p_common.RequestHead) returns (p_common.ResponseHead);
+}

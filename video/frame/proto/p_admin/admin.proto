@@ -1,0 +1,97 @@
+syntax = "proto3";
+package p_admin;
+
+
+enum AdminStatus{
+    admin_normal = 0;
+    admin_disable = 1;
+}
+
+//app状态
+enum AppStatus{
+    app_normal = 0;
+    app_disabled = 1;
+}
+
+message Admins{
+    repeated AdminInfo items = 1;
+} 
+
+message AdminInfo {
+    // 请求 uuid
+    int32 id = 1;
+    string name = 2;
+	string user_name = 3;
+	string user_pass = 4;
+	string phone = 5;
+	int32 group_id = 6;
+	AdminStatus status = 7;
+	string create_time = 8;
+	string login_time = 9;
+	int32 login_count = 10;
+	string login_ip = 11;
+} 
+
+message Groups{
+    repeated AdminGroup items = 1;
+}
+
+message AdminGroup {
+    int32 id = 1;
+    string name = 2;
+    int32 status = 3;
+    repeated int32 menu = 4;
+    int32 permiss = 5;
+}
+
+message MenuMeta{
+    string title = 1;
+	string icon = 2;
+}
+
+message Menu{
+    int32 id = 1;
+	string path = 2;
+	string redirect = 3;
+	string name = 4;
+	string component = 5;
+	MenuMeta meta = 6;
+	string label = 7;
+    repeated Menu children = 8;
+    int32 parent = 9;
+}
+
+message Menus{
+    repeated Menu items = 1;
+}
+
+message AppInfo{
+    int32 id = 1;
+    string name = 2;
+    string package_name = 3;
+    int32 platform = 4;
+    AppStatus status = 5;
+}
+message AppList{
+    repeated AppInfo items = 1;
+}
+
+message ConfigItem{
+    int32 id = 1;
+    string name = 2;
+    string key = 3;
+    string value = 4;
+    int32 config_id = 5;
+}
+
+message AppConfig{
+    int32 id = 1;
+    int32 app_id = 2;
+    string show_name = 3;//显示名称
+    repeated ConfigItem configs = 4; //配置项
+    string disclaimer = 5;//免责申明
+}
+
+message AppConfigList{
+    repeated AppConfig items = 1;
+}

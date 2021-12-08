@@ -1,0 +1,72 @@
+syntax = "proto3";
+package p_distribute;
+
+enum DistStatus {
+    DistWait = 0;
+    DistRun = 1;
+    DistFail = 2;
+    DistSuccess = 3;
+}
+enum ActionType{
+    ActWait = 0;
+    ActRun = 1;
+    ActFail = 2;
+    ActFailAll = 3;
+}
+
+message FileDistInfo {
+    string id = 1;
+    string source_file = 2;
+    string station_name = 3;
+    string file_name = 4;
+    string target_ip = 5;
+    string ftp_user = 6;
+    string ftp_pass = 7;
+    string ftp_path = 8;
+    int32 ftp_port = 9;
+    int32 progress = 10;
+    int32 index = 11;
+    DistStatus status = 12;
+    string eid = 13;
+    int32 time = 14;
+    string album_name = 15;
+    string err_msg = 16;
+    string attr = 17;
+    string name = 18;
+    uint64 file_size = 19;
+    string speed = 20;
+    string file_sizeh = 21;
+    int32 dist_type = 22; //分发类型
+    int32 dist_sub_type = 23; //分发子类型
+    string local_ip =24;
+}
+
+message FileDistList {
+    repeated FileDistInfo items = 1;
+    int32 total = 2;
+}
+
+message ActionInfo{
+    ActionType act_type = 1;
+    FileDistInfo file_info = 2;
+}
+
+message PageInfo {
+    int32 page_size = 1;
+    int32 totle = 2;
+    int32 page = 3;
+    DistStatus status = 4;
+}
+
+message DistResponse {
+    int32 code = 1;
+    string msg = 2;
+}
+
+service Message {
+    rpc AddDistribute (FileDistList) returns (DistResponse);
+    rpc GetDistributes(PageInfo) returns (FileDistList);
+    rpc SetIndex(FileDistInfo) returns (DistResponse);
+    rpc Retry(ActionInfo) returns (DistResponse);
+    rpc Delete(ActionInfo) returns (DistResponse);
+}
