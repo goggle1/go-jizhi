@@ -1,9 +1,12 @@
 package core
 
 import (
-	"git.tvblack.com/video/frame/command"
-	"git.tvblack.com/video/frame/librarys"
-	"git.tvblack.com/video/frame/service"
+	// "git.tvblack.com/video/frame/command"
+	// "git.tvblack.com/video/frame/librarys"
+	// "git.tvblack.com/video/frame/service"
+	"github.com/goggle1/go-jizhi/video/frame/command"
+	"github.com/goggle1/go-jizhi/video/frame/librarys"
+	"github.com/goggle1/go-jizhi/video/frame/service"
 )
 
 type Appcation interface {
