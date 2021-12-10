@@ -4,7 +4,8 @@ import (
 	"log"
 	"time"
 
-	"git.tvblack.com/video/frame/core"
+	// "git.tvblack.com/video/frame/core"
+	"github.com/goggle1/go-jizhi/video/frame/core"
 
 	"github.com/micro/go-micro/registry"
 	"github.com/micro/go-plugins/registry/etcdv3"

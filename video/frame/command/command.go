@@ -3,7 +3,8 @@ package command
 import (
 	"fmt"
 
-	"git.tvblack.com/video/frame/message"
+	// "git.tvblack.com/video/frame/message"
+	"github.com/goggle1/go-jizhi/video/frame/message"
 
 	"github.com/sirupsen/logrus"
 )

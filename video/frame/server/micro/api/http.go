@@ -7,7 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"git.tvblack.com/video/frame/common"
+	// "git.tvblack.com/video/frame/common"
+	"github.com/goggle1/go-jizhi/video/frame/common"
 	"github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
 	"github.com/micro/go-micro/errors"

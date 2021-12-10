@@ -3,7 +3,8 @@ package service
 import (
 	"fmt"
 
-	"git.tvblack.com/video/frame/proto/p_common"
+	// "git.tvblack.com/video/frame/proto/p_common"
+	"github.com/goggle1/go-jizhi/video/frame/proto/p_common"
 
 	"github.com/sirupsen/logrus"
 )

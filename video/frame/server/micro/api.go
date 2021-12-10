@@ -5,8 +5,10 @@ import (
 	"net/http"
 	"time"
 
-	"git.tvblack.com/video/frame/core"
-	"git.tvblack.com/video/frame/server/micro/api"
+	// "git.tvblack.com/video/frame/core"
+	// "git.tvblack.com/video/frame/server/micro/api"
+	"github.com/goggle1/go-jizhi/video/frame/core"
+	"github.com/goggle1/go-jizhi/video/frame/server/micro/api"
 
 	"github.com/gorilla/mux"
 

@@ -5,9 +5,11 @@ import (
 	"log"
 	"time"
 
-	"git.tvblack.com/video/frame/proto/p_common"
+	// "git.tvblack.com/video/frame/proto/p_common"
+	"github.com/goggle1/go-jizhi/video/frame/proto/p_common"
 
-	"git.tvblack.com/video/frame/core"
+	// "git.tvblack.com/video/frame/core"
+	"github.com/goggle1/go-jizhi/video/frame/core"
 
 	micro "github.com/micro/go-micro"
 	"github.com/micro/go-micro/registry"

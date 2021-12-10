@@ -9,7 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"git.tvblack.com/hardware/smart_lamp_server/api/module/micro/helper"
+	// "git.tvblack.com/hardware/smart_lamp_server/api/module/micro/helper"
+	"github.com/goggle1/go-jizhi/hardware/smart_lamp_server/api/module/micro/helper"
 	"github.com/micro/go-micro/client"
 	"github.com/micro/go-micro/cmd"
 	"github.com/micro/go-micro/errors"
